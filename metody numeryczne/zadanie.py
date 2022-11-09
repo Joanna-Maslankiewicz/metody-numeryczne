@@ -7,7 +7,7 @@ import iteracjaprosta, iteracjaseidela
 from typing import List
 
 class Zadanie:
-    def __init__(self, n = 1000, M = 10, N = 10):
+    def __init__(self, n = 1000, M = 5, N = 21):
         """Konstruktor okreslajacy parametry eksperymentu"""
         self.n = n                          # maksymalny rozmiar macierzy
         self.M = M                          # liczba pomiarow
@@ -21,8 +21,7 @@ class Zadanie:
         czas = 0.0
         # tworzymy obiekt klasy Uklad
         
-        # tworzymy petle, w ktorej bedziemy mierzyc czas rozwiazywania
-        # ukladu n rownan self.pomiary razy
+        # tworzymy petle, w ktorej bedziemy mierzyc czas rozwiazywania ukladu n rownan self.pomiary razy
         
         return czas/self.M
     

@@ -50,15 +50,18 @@ def testy(typ):
     elif typ == 4:
         """Miejsce na rozwiazanie - przygotowanie"""
         # tworzymy obiekt klasy Uklad
-        
+        macierzCholesky = uklad.Uklad(wymiar=10)
         # losujemy odpowiedni uklad rownan
-        
+        macierzCholesky.losuj_uklad()
         # tworzymy obiekt klasy odpowiadajacej metodzie
-        
+        klasa = cholesky.Cholesky()
         # uruchamiamy stoper
         stoper = time.time()
         # wywolujemy odpowiednie metody
-        
+        klasa.rozklad()
+        klasa.rozwiaz_trojkatny_dolny()
+        klasa.rozwiaz_trojkatny_gorny()
+        klasa.wypisz_uklad()
         # zatrzymujemy stoper
         czas = time.time() - stoper
         # wyswietlamy czas rozwiazywania ukladu
@@ -83,5 +86,5 @@ def testy(typ):
         )
         
 if __name__ == '__main__':
-    testy(6)
+    testy(4)
     
