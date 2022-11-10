@@ -7,7 +7,7 @@ import iteracjaprosta, iteracjaseidela
 from typing import List
 
 class Zadanie:
-    def __init__(self, n = 1000, M = 5, N = 21):
+    def __init__(self, n = 217, M = 5, N = 21):
         """Konstruktor okreslajacy parametry eksperymentu"""
         self.n = n                          # maksymalny rozmiar macierzy
         self.M = M                          # liczba pomiarow

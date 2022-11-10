@@ -50,7 +50,7 @@ def testy(typ):
     elif typ == 4:
         """Miejsce na rozwiazanie - przygotowanie"""
         # tworzymy obiekt klasy Uklad
-        ukl = uklad.Uklad(100)
+        ukl = uklad.Uklad(217)
         # losujemy odpowiedni uklad rownan
         ukl.losuj_uklad_symetryczny_dodatnio_okreslony()
         # tworzymy obiekt klasy odpowiadajacej metodzie
@@ -68,7 +68,7 @@ def testy(typ):
     elif typ == 5:
         """Miejsce na rozwiazanie Zadania 1"""
         # tworzymy obiekt klasy Zadanie i podajemy odpowiednie parametry
-        zad1 = zadanie.Zadanie()
+        zad1 = zadanie.Zadanie(217,5,21)
         # badamy zlozonosc obliczeniowa wybranej metody
         zad1.badaj_zlozonosc(
             metoda = 1,
@@ -77,7 +77,7 @@ def testy(typ):
     elif typ == 6:
         # porownujemy metody
         # tworzymy obiekt klasy Zadanie i podajemy odpowiednie parametry
-        zad2 = zadanie.Zadanie()
+        zad2 = zadanie.Zadanie(217,5,21)
         # badamy zlozonosc obliczeniowa wybranej metody
         zad2.porownaj_metody(
             nazwa_metody1 = "Metoda Cholesky'ego",
@@ -86,5 +86,5 @@ def testy(typ):
         
 if __name__ == '__main__':
     zad = zadanie.Zadanie()
-    testy(4)
+    testy(6)
     
