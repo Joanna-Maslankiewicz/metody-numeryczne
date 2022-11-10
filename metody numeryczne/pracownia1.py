@@ -50,18 +50,17 @@ def testy(typ):
     elif typ == 4:
         """Miejsce na rozwiazanie - przygotowanie"""
         # tworzymy obiekt klasy Uklad
-        macierzCholesky = uklad.Uklad(wymiar=10)
+        ukl = uklad.Uklad(100)
         # losujemy odpowiedni uklad rownan
-        macierzCholesky.losuj_uklad()
+        ukl.losuj_uklad_symetryczny_dodatnio_okreslony()
         # tworzymy obiekt klasy odpowiadajacej metodzie
-        klasa = cholesky.Cholesky()
+        chol = cholesky.Cholesky(ukl)
         # uruchamiamy stoper
         stoper = time.time()
         # wywolujemy odpowiednie metody
-        klasa.rozklad()
-        klasa.rozwiaz_trojkatny_dolny()
-        klasa.rozwiaz_trojkatny_gorny()
-        klasa.wypisz_uklad()
+        chol.rozklad()
+        chol.rozwiaz_trojkatny_dolny()
+        chol.rozwiaz_trojkatny_gorny()
         # zatrzymujemy stoper
         czas = time.time() - stoper
         # wyswietlamy czas rozwiazywania ukladu
@@ -73,7 +72,7 @@ def testy(typ):
         # badamy zlozonosc obliczeniowa wybranej metody
         zad1.badaj_zlozonosc(
             metoda = 1,
-            opis = "Metoda ..."
+            opis = "Metoda Cholesky'ego"
         )
     elif typ == 6:
         # porownujemy metody
@@ -81,10 +80,11 @@ def testy(typ):
         zad2 = zadanie.Zadanie()
         # badamy zlozonosc obliczeniowa wybranej metody
         zad2.porownaj_metody(
-            nazwa_metody1 = "Metoda ...",
-            nazwa_metody2 = "Metoda ..."
+            nazwa_metody1 = "Metoda Cholesky'ego",
+            nazwa_metody2 = "Metoda Gaussa-Jordana"
         )
         
 if __name__ == '__main__':
+    zad = zadanie.Zadanie()
     testy(4)
     
