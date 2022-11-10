@@ -86,5 +86,5 @@ def testy(typ):
         
 if __name__ == '__main__':
     zad = zadanie.Zadanie()
-    testy(6)
+    testy(4)
     
