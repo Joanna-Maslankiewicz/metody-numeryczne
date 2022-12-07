@@ -7,7 +7,7 @@ import iteracjaprosta, iteracjaseidela
 from typing import List
 
 class Zadanie:
-    def __init__(self, n = 1000, M = 5, N = 21):
+    def __init__(self, n = 217, M = 5, N = 21):
         """Konstruktor okreslajacy parametry eksperymentu"""
         self.n = n                          # maksymalny rozmiar macierzy
         self.M = M                          # liczba pomiarow
@@ -20,9 +20,23 @@ class Zadanie:
             k - rozmiar macierzy"""
         czas = 0.0
         # tworzymy obiekt klasy Uklad
-        
+        ukl = uklad.Uklad(k)
         # tworzymy petle, w ktorej bedziemy mierzyc czas rozwiazywania ukladu n rownan self.pomiary razy
-        
+        for i in range(self.M):
+            ukl.losuj_uklad_symetryczny_dodatnio_okreslony()
+            if metoda == 1:
+                m1 = cholesky.Cholesky(ukl)
+                stoper = time.time()
+                m1.rozklad()
+                m1.rozwiaz_trojkatny_dolny()
+                m1.rozwiaz_trojkatny_gorny()
+                czas = time.time() - stoper
+            elif metoda == 2:
+                m2 = gaussjordan.GaussJordan(ukl)
+                stoper = time.time()
+                m2.eliminacja()
+                m2.wypisz_rozwiazanie()
+                czas = time.time() - stoper
         return czas/self.M
     
     def badaj_zlozonosc(self, metoda, opis):

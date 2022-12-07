@@ -4,7 +4,7 @@ import numpy as np
 
 class Uklad:
   
-    def __init__(self, wymiar=10):
+    def __init__(self, wymiar=100):
         """Konstruktor okreslajacy uklad"""
         self.n = wymiar            # maksymalny wymiar macierzy ukladu
     
